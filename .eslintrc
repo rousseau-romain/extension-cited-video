@@ -2,8 +2,11 @@
     "extends": [
         "airbnb-base"
     ],
+    "plugins": [
+        "align-assignments"
+    ],
     "globals": {
-        "document": "writable"
+        "document": "writable",
     },
     "rules": {
         "semi": [
@@ -14,14 +17,23 @@
             "error",
             {
                 "exceptions": {
-                    "VariableDeclarator": true
+                    "VariableDeclarator": true,
+                    "Property": true,
+                    "ImportDeclaration": true,
+                    "AssignmentExpression": true,
                 }
             }
         ],
         "key-spacing": [
             "error",
             {
-                "align": "value"
+                "align": "colon"
+            }
+        ],
+        "align-assignments/align-assignments": [
+            2,
+            {
+                "requiresOnly": false
             }
         ]
     }
