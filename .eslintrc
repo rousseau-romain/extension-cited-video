@@ -6,7 +6,7 @@
         "align-assignments"
     ],
     "globals": {
-        "document": "writable",
+        "document": "writable"
     },
     "rules": {
         "semi": [
@@ -20,7 +20,7 @@
                     "VariableDeclarator": true,
                     "Property": true,
                     "ImportDeclaration": true,
-                    "AssignmentExpression": true,
+                    "AssignmentExpression": true
                 }
             }
         ],

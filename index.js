@@ -54,13 +54,12 @@ const getCloseIframeVideo = () => {
   return closeDiv
 }
 
-const getIframeVideo = (src) => {
+const getIframeVideo = () => {
   const iframe = document.createElement('iframe')
 
   iframe.id     = 'iframeCitedVideo'
   iframe.height = '100%'
   iframe.width  = '100%'
-  iframe.src    = src
 
   return iframe
 }
@@ -86,19 +85,18 @@ const getContainerIframeVideo = (iframe, closeIframe) => {
 
   return containerIframe
 }
-
+const playerIframeVideo    = getIframeVideo()
 const closeIframeVideo     = getCloseIframeVideo()
-const iframe               = getIframeVideo('')
-const containerIframeVideo = getContainerIframeVideo(iframe, closeIframeVideo)
-
+const containerIframeVideo = getContainerIframeVideo(playerIframeVideo, closeIframeVideo)
 const changeUrlIframeVideo = (url) => {
-  iframe.src = url
+  playerIframeVideo.src = url
 }
 
 const isClosedContainerIframe = () => containerIframeVideo.style.display === 'none'
 
 const closeContainerIframe = () => {
   containerIframeVideo.style.display = 'none'
+  changeUrlIframeVideo('')
   document.querySelector('#movie_player video').play()
 }
 
@@ -163,4 +161,4 @@ setTimeout(() => {
       }
     }
   }
-}, 1500)
+}, 500)
